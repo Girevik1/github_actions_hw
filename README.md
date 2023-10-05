@@ -1,3 +1,4 @@
-# PHP_2023
+# PHP_2023 
+## hw-21 Deploy приложения
 
-https://otus.ru/lessons/razrabotchik-php/?utm_source=github&utm_medium=free&utm_campaign=otus
+> Для деплоя выбрал свою домашку №15, добавил workflows
