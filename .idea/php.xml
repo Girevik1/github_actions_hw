@@ -10,6 +10,28 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/code/vendor/pear/console_table" />
+      <path value="$PROJECT_DIR$/code/vendor/composer" />
+      <path value="$PROJECT_DIR$/code/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/code/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/code/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/code/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/code/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/code/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/code/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/code/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/code/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/code/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/code/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/code/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/code/vendor/php-amqplib/php-amqplib" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
