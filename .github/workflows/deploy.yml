@@ -42,6 +42,7 @@ jobs:
           key: ${{ secrets.SERVER_KEY }}
           port: ${{ secrets.SERVER_PORT }}
 #        run: docker-compose -f docker-compose.yaml up -d --build
-#          script: |
+          script: |
+             docker-compose -f docker-compose.yaml up --build -d
 #            sudo docker-compose -f docker-compose.prod-ci.yml -p prod pull
 #            sudo docker-compose -f docker-compose.prod-ci.yml -p prod up -d
