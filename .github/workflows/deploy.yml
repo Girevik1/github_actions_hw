@@ -47,7 +47,6 @@ jobs:
 #             docker-compose -f docker-compose.yaml up --build -d
 #            sudo docker-compose -f docker-compose.prod-ci.yml -p prod pull
 #            sudo docker-compose -f docker-compose.prod-ci.yml -p prod up -d
-
   deploy:
     needs: integration-tests
     runs-on: ubuntu-latest
