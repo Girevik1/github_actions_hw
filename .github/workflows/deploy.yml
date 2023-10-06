@@ -71,9 +71,10 @@ jobs:
 
 #        command: |
         script: |
-          cd ${{ secrets.PROJECT_FOLDER }};
-          git checkout main;
-          git pull;
-          docker-compose --file docker-compose.yml down;
-          docker-compose --file docker-compose.yml up -d;
+          cd ${{ secrets.PROJECT_FOLDER }}
+          git checkout main
+          git pull
+          ls -la
+          docker-compose --file docker-compose.yaml down
+          docker-compose --file docker-compose.yaml up -d
 #          docker system prune --all --force;
