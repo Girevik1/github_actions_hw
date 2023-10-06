@@ -29,9 +29,9 @@ services:
 
   redis:
     container_name: redis-pedis
-    image: redis:latest
+    image: redis:7.0.10
     ports:
-      - 6379:6379
+      - "6379:6379"
     networks:
       - redis_pedis_network
 

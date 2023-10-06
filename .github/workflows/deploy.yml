@@ -24,30 +24,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build the stack
         run: docker-compose -f docker-compose.yaml up -d --build
-
-      # Шаг 2: собираем проект с тестами
-      - name: Build tests
+      # Шаг 2: запускаем тесты с небольшой детализацией
+      - name: Run tests
         run: echo 'Здесь должны быть тесты!'
-#        run: dotnet build GOT.Tests
-#
-#      # Шаг 3: запускаем тесты с небольшой детализацией
-#      - name: Run tests
-#        run: dotnet test LOT.Tests --verbosity normal
-#      - name: "Run deploy on server"
-#        uses: appleboy/ssh-action@master
-#        with:
-#          host: ${{ secrets.SERVER_HOST }}
-#          username: ${{ secrets.SERVER_USERNAME }}
-#          key: ${{ secrets.SERVER_KEY }}
-#          port: ${{ secrets.SERVER_PORT }}
-##        run: docker-compose -f docker-compose.yaml up -d --build
-#          script: |
-#            whoami
-#            ls -al
-#             docker-compose -f docker-compose.yaml up --build -d
-#            sudo docker-compose -f docker-compose.prod-ci.yml -p prod pull
-#            sudo docker-compose -f docker-compose.prod-ci.yml -p prod up -d
 
+  # Деплоим на сервер, переменные - секретные ключи заранее прописал в setting-secret-key
   deploy:
     needs: integration-tests
     runs-on: ubuntu-latest
@@ -56,20 +37,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Run command on remote server
-#      uses: D3rHase/ssh-command-action@v0.2.2
       uses: appleboy/ssh-action@master
       with:
-#        host: ${{secrets.SERVER_HOST}}
-#        user: ${{secrets.SERVER_USERNAME}}
-#        private_key: ${{secrets.SSH_PRIVATE_KEY}}
-#        host_fingerprint: ${{secrets.HOST_FINGERPRINT}}
-
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_KEY }}
         port: ${{ secrets.SERVER_PORT }}
-
-#        command: |
         script: |
           cd ${{ secrets.PROJECT_FOLDER }}
           git checkout main
@@ -77,4 +50,4 @@ jobs:
           ls -la
           docker-compose --file docker-compose.yaml down
           docker-compose --file docker-compose.yaml up -d
-#          docker system prune --all --force;
+          docker system prune --all --force;
